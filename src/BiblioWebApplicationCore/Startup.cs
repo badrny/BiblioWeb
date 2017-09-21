@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,10 +17,8 @@ namespace BiblioWebApplicationCore
                 .AddEnvironmentVariables();
 
             if (env.IsDevelopment())
-            {
                 // This will push telemetry data through Application Insights pipeline faster, allowing you to view results immediately.
                 builder.AddApplicationInsightsSettings(developerMode: true);
-            }
             Configuration = builder.Build();
         }
 
@@ -61,20 +55,15 @@ namespace BiblioWebApplicationCore
                 app.UseBrowserLink();
             }
             else
-            {
                 app.UseExceptionHandler("/Home/Error");
-            }
 
             //app.UseApplicationInsightsExceptionTelemetry();
 
             app.UseStaticFiles();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Authentication}/{id?}");
-            });
+            app.UseMvc(routes => routes.MapRoute(
+                name: "default",
+                template: "{controller=Home}/{action=Authentication}/{id?}"));
         }
     }
 }

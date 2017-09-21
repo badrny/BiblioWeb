@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 namespace BiblioWebServicesCore.Model
@@ -40,13 +39,11 @@ namespace BiblioWebServicesCore.Model
             return _context.BookTypes;
         }
 
-        public IEnumerable<Type> GetTypes()
-        {
-            return _context.Types.ToList();
-        }
+        public IEnumerable<Type> GetTypes() => _context.Types.ToList();
 
-        public void Remove(long []keys)
+        public void Remove(long[] keys)
         {
+            if (keys == null) throw new ArgumentNullException(nameof(keys));
             foreach (var item in keys)
             {
                 var entity = _context.Books.First(t => t.Key == item);
