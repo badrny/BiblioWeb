@@ -1,0 +1,98 @@
+﻿
+@{
+}
+@model IEnumerable<BiblioWebApplicationCore.Models.Type>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Ajouter un Livre </h4>
+            </div>
+            <div class="modal-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#additemauto" aria-controls="additemauto" role="tab" data-toggle="tab">Automatique</a></li>
+                    <li role="presentation"><a href="#additemmanual" aria-controls="additemmanual" role="tab" data-toggle="tab">Manuel</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content" style="margin-top:10px">
+                    <div role="tabpanel" class="tab-pane fade in active" id="additemauto">
+                        <div class="input-group">
+                            <input type="text" id="findinput" class="form-control" placeholder="Nom de Livre" name="nameofbook" />
+
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary" id="findbutton">Trouver</button>
+                            </span>
+                        </div>
+
+                        <div id="showmybook" style="padding-top:10px">
+                            <div class="loader"></div>
+                        </div>
+
+                        <div id="thumbnailgroupauto" class="thumbnail">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Catégories</span>
+                                    <select id="booktypes" class="form-control selectpicker" title="selectioner les categories" name="booktypes" data-live-search="true" data-selected-text-format="count > 3" multiple>
+                                        @foreach (var item in Model)
+                                        {
+                                            <option value="@item.Key">@item.Label</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Format</span>
+                                    <select id="bookformat" class="form-control" name="Type">
+                                        <option value="0">Poche</option>
+                                        <option value="1">Broché</option>
+                                        <option value="2">Numerique</option>
+                                    </select>
+                                </div>
+                                <div id="groupbtnaddcloseauto">
+                                    <button type="button" id="btnaddauto" class="btn btn-primary btn-block">Ajouter</button>
+                                    <button type="button" class="btn btn-default btn-block" data-dismiss="modal">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="additemmanual">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">Titre</span>
+                                <input id="titleofbook" class="form-control" aria-describedby="basic-addon1" name="Title" />
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">Auteur</span>
+                                <input id="autorofbook" class="form-control" aria-describedby="basic-addon1" name="Autor" />
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">Catégorie</span>
+                                <select id="typesofbook" class="form-control selectpicker" title="selectioner les categories" name="typesofbook" data-live-search="true" data-selected-text-format="count > 3" multiple>
+                                    @foreach (var item in Model)
+                                    {
+                                        <option id="@item.Key">@item.Label</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">Format</span>
+                                <select id="formatbook" class="form-control" name="Type">
+                                    <option>Poche</option>
+                                    <option>Broché</option>
+                                    <option>Numerique</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="groupbtnaddclosemanu">
+                            <button type="button" id="submitformajax" class="btn btn-primary btn-block">Ajouter</button>
+                            <button type="button" class="btn btn-default btn-block" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert-info">l'element a été bien ajouter </div>
+            </div>
+        </div>
+    </div>
+</div>

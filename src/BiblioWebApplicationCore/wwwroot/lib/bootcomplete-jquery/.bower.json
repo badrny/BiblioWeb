@@ -1,0 +1,14 @@
+{
+  "name": "bootcomplete-jquery",
+  "homepage": "https://github.com/getwebhelp/bootcomplete.js",
+  "_release": "v1.0",
+  "_resolution": {
+    "type": "tag",
+    "tag": "v1.0",
+    "commit": "2711fdbe0d84592c251bf2d0abf80d32c71f3187"
+  },
+  "_source": "https://github.com/getwebhelp/bootcomplete.js.git",
+  "_target": "v1.0",
+  "_originalSource": "bootcomplete-jquery",
+  "_direct": true
+}

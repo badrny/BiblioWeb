@@ -1,0 +1,54 @@
+﻿@*
+    @HTml.Row(string) to encode String to utf8 (French char)
+*@
+@{
+}
+@using Microsoft.AspNetCore.Http;
+@model BiblioWebApplicationCore.Models.Book
+@if (Context.Session.GetString("View").Equals("th-list"))
+{
+    <tr>
+        <td style=" display: none">@Model.Key</td>
+        <td><img src="@Model.CoverSrc" alt="Cover of book" class="img-responsive img-thumbnail" /> </td>
+        <td>@Html.Raw(@Model.Title)</td>
+        <td>@Html.Raw(@Model.Author)</td>
+        <td>
+            @foreach (var type in Model.Types)
+            {
+                <span class="label label-default">@type.TypeID</span>
+            }
+        </td>
+        <td>@Model.Format</td>
+        @if (@Model.IsRead)
+        {
+            <td>Lu</td>
+        }
+        else
+        {
+            <td>Non Lu</td>}
+       
+    </tr>
+}
+else
+{
+    <div class="col-sm-3 col-md-2">
+        <div class="thumbnail" data-key="@Model.Key">
+            <h4 class="text-center">@Html.Raw(@Model.Title)</h4>
+            <img src="@Model.CoverSrc" alt="Cover of book" class="img-responsive img-thumbnail" />
+            <div class="caption text-center">
+                <span>Sortie le : </span> <span class="spandate">@Model.Date.ToString("d")</span><br />
+                <strong><span class="spanauthor">@Html.Raw(@Model.Author)</span> </strong><br />
+                <span class="spanformat">@Model.Format</span> <br />
+                @if (@Model.IsRead)
+                {
+                    <span class="isread label label-info">Lu</span>
+                }
+                else
+                {
+                    <span class="isread label label-default">Non Lu</span>}
+
+            </div>
+        </div>
+    </div>
+
+}

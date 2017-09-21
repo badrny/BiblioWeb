@@ -1,0 +1,18 @@
+﻿
+<div class="row">
+    <div class="col-md-12">
+        <div id="listitem" class="containeritems">
+            @await Component.InvokeAsync("InvokeListItem")
+        </div>
+    </div>
+</div>
+<!-- button control  -->
+<a id="readbutton" href="#" class="btn btn-info btn-lg ReadButton" role="button" title="Marquer comme Lu" data-placement="top" data-tooltip="tooltip"><span class="glyphicon glyphicon-ok"></span></a>
+<a id="notebutton" href="#" class="btn btn-default btn-lg NoteButton" role="button" title="Note" data-placement="top" data-tooltip="tooltip"><span class="glyphicon glyphicon-pencil"></span></a>
+<a id="deletebutton" href="#" class="btn btn-danger btn-lg DeleteButton" role="button" title="Supprimer une Media" data-placement="top" data-tooltip="tooltip"><span class="glyphicon glyphicon-trash"></span></a>
+<a id="addbutton" href="#" class="btn btn-success btn-lg AddButton" role="button" title="Ajouter une Media" data-toggle="modal" data-placement="left" data-target="#myModal" data-tooltip="tooltip"><span class="glyphicon glyphicon-plus"></span></a>
+<div id="alert"></div>
+<!-- Call partiel view add item   -->
+@await Component.InvokeAsync("InvokeAddItem")
+<!-- Call partiel search item   -->
+@await Component.InvokeAsync("InvokeSearchItem")

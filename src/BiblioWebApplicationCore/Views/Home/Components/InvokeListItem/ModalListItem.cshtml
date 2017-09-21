@@ -1,0 +1,114 @@
+﻿@using BiblioWebApplicationCore.Models
+@using Microsoft.AspNetCore.Http;
+@model IEnumerable<Book>
+@{
+}
+@if (Context.Session.GetString("View").Equals("th-list"))
+{
+    <div class="table-responsive000">
+        <table class="table">
+            <thead>
+                <tr>
+
+                    <th>Couverture</th>
+                    <th>Titre</th>
+                    <th>Auteur</th>
+                    <th>type</th>
+                    <th>Format</th>
+                    <th>Lu</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Book item in Model)
+                {
+                <tr>
+                    <td style=" display: none">@item.Key</td>
+                    <td><img src="@item.CoverSrc" alt="Cover of book" class="img-responsive img-thumbnail" /> </td>
+                    <td>@Html.Raw(@item.Title)</td>
+                    <td>@Html.Raw(@item.Author)</td>
+                    <td>
+                        @foreach (var type in item.Types)
+                            {
+                            <span class="label label-default">@type.TypeID</span>
+                            }
+                    </td>
+                    <td>@item.Format</td>
+                    @if (@item.IsRead)
+                    {
+                        <td>Lu</td>
+                    }
+                    else
+                    {
+                    <td>Non Lu</td>}
+
+                </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        table = $("table").easyTable({
+            hover: 'btn-primary',
+            buttons: true,
+            select: true,
+            sortable: true,
+            scroll: { active: false, height: '650px' }
+        });</script>
+}
+else
+{
+    <div id="rowsitems" class="container-fluid">
+        @{
+            var i = 0;
+
+            while (i < Model.Count())
+            {
+                var j = 0;
+                <div class="row">
+                    @while (j <= 5 && i < Model.Count())
+                    {
+                        <div class="col-sm-3 col-md-2">
+
+                            <div class="thumbnail" data-key="@Model.ElementAt(i).Key">
+                                <h4 class="text-center" data-title="@Model.ElementAt(i).Title">@Html.Raw(@Model.ElementAt(i).Title)</h4>
+                                <img src="@Model.ElementAt(i).CoverSrc" alt="Cover of book" class="img-responsive img-thumbnail" data-img="@Model.ElementAt(i).CoverSrc" />
+                                <div class="caption text-center">
+                                    <span>Sortie le : </span> <span class="spandate" data-date="@Model.ElementAt(i).Date.ToString("d")">@Model.ElementAt(i).Date.ToString("d")</span><br />
+                                    <strong><span class="spanauthor" data-author="@Model.ElementAt(i).Author">@Html.Raw(@Model.ElementAt(i).Author)</span> </strong><br />
+                                    <span class="spanformat">@Model.ElementAt(i).Format</span><br />
+                                    @if (@Model.ElementAt(i).IsRead)
+                                    {
+                                        <span class="isread label label-info">Lu</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="isread label label-default">Non Lu</span>}
+                                </div>
+                            </div>
+
+
+                        </div>
+                        i++; j++;
+
+                    }
+
+
+
+                </div>
+            }
+        }
+    </div>
+    <script>
+        $('#rowsitems').on('click', 'div.thumbnail', function () {
+        //$("#rowsitems l").on("click", function () {
+           // console.log($("#rowsitems div.thumbnail").data("key"));
+            $("#rowsitems div.thumbnail").removeClass("thumbnailselected");
+            $(this).addClass("thumbnailselected");
+            $(".DeleteButton").css("display", "block");
+            $(".ReadButton").css("display", "block");
+            $(".NoteButton").css("display", "block");
+
+        });</script>
+}

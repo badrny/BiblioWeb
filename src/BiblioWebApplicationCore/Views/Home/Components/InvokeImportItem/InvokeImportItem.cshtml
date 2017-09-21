@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model BiblioWebApplicationCore.Models.Book
+
+
+
+ <div class="row">
+    <div class="col-sm-12 col-md-12">
+        <div id ="showimportitem" class="showimportitem thumbnail">
+            <h4 class="text-center" data-title="@Model.Title">@Html.Raw(@Model.Title)</h4>
+            <img src="@Model.CoverSrc" alt="Cover of book" class="img-responsive img-thumbnail" data-img="@Model.CoverSrc" /> 
+            <div class="caption text-center" >
+                <span>Sortie le : </span> <span class="spandate" data-date="@Model.Date.ToString("d")">@Model.Date.ToString("d")</span><br />
+                <strong><span class="spanauthor" data-author="@Model.Author">@Html.Raw(@Model.Author)</span> </strong>  
+            </div>
+        </div>
+    </div>
+</div>
