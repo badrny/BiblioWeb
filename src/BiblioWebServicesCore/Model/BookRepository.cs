@@ -9,21 +9,15 @@ namespace BiblioWebServicesCore.Model
     { 
         private readonly BookContext _context;
 
-        public BookRepository(BookContext context)
-        {
-            _context = context;
-        }
-    
+        public BookRepository(BookContext context) => _context = context;
+
         public void Add(Book item)
         {
             _context.Books.Add(item);
             _context.SaveChanges();
         }
 
-        public Book Find(long key)
-        {
-           return _context.Books.Find(key);
-        }
+        public Book Find(long key) => _context.Books.Find(key);
 
         public IEnumerable<Book> GetAll()
         {
@@ -34,10 +28,7 @@ namespace BiblioWebServicesCore.Model
             return _context.Books; 
         }
 
-        public IEnumerable<BookType> GetBookTypes()
-        {
-            return _context.BookTypes;
-        }
+        public IEnumerable<BookType> GetBookTypes() => _context.BookTypes;
 
         public IEnumerable<Type> GetTypes() => _context.Types.ToList();
 

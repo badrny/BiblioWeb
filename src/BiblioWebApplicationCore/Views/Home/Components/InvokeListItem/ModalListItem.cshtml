@@ -5,7 +5,7 @@
 }
 @if (Context.Session.GetString("View").Equals("th-list"))
 {
-    <div class="table-responsive000">
+    <div>
         <table class="table">
             <thead>
                 <tr>
@@ -33,7 +33,7 @@
                             }
                     </td>
                     <td>@item.Format</td>
-                    @if (@item.IsRead)
+                    @if (item.IsRead)
                     {
                         <td>Lu</td>
                     }
@@ -109,6 +109,5 @@ else
             $(".DeleteButton").css("display", "block");
             $(".ReadButton").css("display", "block");
             $(".NoteButton").css("display", "block");
-
         });</script>
 }

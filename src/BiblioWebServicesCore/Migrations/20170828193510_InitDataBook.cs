@@ -12,13 +12,13 @@ namespace BiblioWebServicesCore.Migrations
                 name: "Book",
                 columns: table => new
                 {
-                    Key = table.Column<long>(nullable: false)
+                    Key = table.Column<long>()
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Author = table.Column<string>(nullable: true),
                     CoverSrc = table.Column<string>(nullable: true),
-                    Date = table.Column<DateTime>(nullable: false),
-                    Format = table.Column<int>(nullable: false),
-                    IsRead = table.Column<bool>(nullable: false),
+                    Date = table.Column<DateTime>(),
+                    Format = table.Column<int>(),
+                    IsRead = table.Column<bool>(),
                     Note = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: true)
                 },
@@ -31,7 +31,7 @@ namespace BiblioWebServicesCore.Migrations
                 name: "Type",
                 columns: table => new
                 {
-                    Key = table.Column<long>(nullable: false)
+                    Key = table.Column<long>()
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Label = table.Column<string>(nullable: true)
                 },
@@ -44,10 +44,10 @@ namespace BiblioWebServicesCore.Migrations
                 name: "BookType",
                 columns: table => new
                 {
-                    Key = table.Column<long>(nullable: false)
+                    Key = table.Column<long>()
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    BookID = table.Column<long>(nullable: false),
-                    TypeID = table.Column<long>(nullable: false)
+                    BookID = table.Column<long>(),
+                    TypeID = table.Column<long>()
                 },
                 constraints: table =>
                 {

@@ -14,7 +14,7 @@ namespace BiblioWebApplicationCore.Views.Home.Components
             HttpClient client = new HttpClient();
             HttpResponseMessage response
             = await client.GetAsync("http://localhost:5000/api/Books/GetBookTypes");
-            using (HttpContent content = response.Content ?? throw new ArgumentNullException("Content"))
+            using (HttpContent content = response.Content)
             {
                 // ... Read the string.
                 string result = await content.ReadAsStringAsync();

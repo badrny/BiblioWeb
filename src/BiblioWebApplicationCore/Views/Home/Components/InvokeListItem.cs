@@ -22,7 +22,7 @@ namespace BiblioWebApplicationCore.Views.Home.Components
             {
                 // ... Read the string.
                 string result = await content.ReadAsStringAsync();
-                // var listjson = JsonConvert.SerializeObject(result);
+                //// var listjson = JsonConvert.SerializeObject(result);
                 var obj = JsonConvert.DeserializeObject<IEnumerable<Book>>(result);
                 return View("ModalListItem", obj);
             }         

@@ -7,7 +7,6 @@
     "jquery-validation": "1.14.0",
     "jquery-validation-unobtrusive": "3.2.6",
     "bootcomplete-jquery": "v1.0",
-    "typeahead.js": "v0.11.1",
     "bootstrap-select": "v1.12.2"
   }
 }

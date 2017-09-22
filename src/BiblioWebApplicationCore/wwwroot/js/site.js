@@ -173,8 +173,8 @@ $(document).ready(function () {
             method: "POST",
             data: {
                 //sam attribute imperatifly equals sam attribute in controler 
-                _booktypes: $("#booktypes").val(), _format: $("#bookformat").val(), _title: $("div .showimportitem.thumbnail h4").data("title"),
-                _author: $("div.showimportitem span.spanauthor ").data("author"), _date: $("div.showimportitem span.spandate").data("date"), _src: $("div.showimportitem.thumbnail img").data("img")
+                booktypes: $("#booktypes").val(), format: $("#bookformat").val(), title: $("div .showimportitem.thumbnail h4").data("title"),
+                author: $("div.showimportitem span.spanauthor ").data("author"), date: $("div.showimportitem span.spandate").data("date"), src: $("div.showimportitem.thumbnail img").data("img")
             },
             success: function (data) {
                 $(".alert-info").show(1000);

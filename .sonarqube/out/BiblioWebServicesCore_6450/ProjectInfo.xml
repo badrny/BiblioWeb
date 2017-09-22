@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>BiblioWebServicesCore</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>3e4ff4ed-dc7b-438f-a4d5-6533a1001800</ProjectGuid>
+  <FullPath>C:\webapp\BiblioWeb\src\BiblioWebServicesCore\BiblioWebServicesCore.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\webapp\BiblioWeb\.sonarqube\out\\BiblioWebServicesCore_6450\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePath">C:\webapp\BiblioWeb\src\BiblioWebServicesCore\bin\Debug\netcoreapp1.1\BiblioWebServicesCore.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPath">C:\webapp\BiblioWeb\.sonarqube\out\\BiblioWebServicesCore_6450</Property>
+    <Property Name="sonar.stylecop.projectFilePath">C:\webapp\BiblioWeb\src\BiblioWebServicesCore\BiblioWebServicesCore.csproj</Property>
+  </AnalysisSettings>
+</ProjectInfo>

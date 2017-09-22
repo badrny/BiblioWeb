@@ -44,10 +44,7 @@ namespace BiblioWebApplicationCore.Models
         public bool IsRead { get; set ; }
         public DateTime Date { get; set; }
 
-        public Book()
-        {
-            IsRead = false;
-        }
+        public Book() => IsRead = false;
     }
 
  

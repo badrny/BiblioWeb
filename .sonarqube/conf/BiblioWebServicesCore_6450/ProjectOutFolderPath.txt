@@ -1,0 +1,1 @@
+C:\webapp\BiblioWeb\.sonarqube\out\\BiblioWebServicesCore_6450

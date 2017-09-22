@@ -1,0 +1,14 @@
+W
+NC:\webapp\BiblioWeb\src\BiblioWebApplicationCore\Controllers\HomeController.csutf-8H
+?C:\webapp\BiblioWeb\src\BiblioWebApplicationCore\Models\Book.csutf-8J
+AC:\webapp\BiblioWeb\src\BiblioWebApplicationCore\Models\IMedia.csutf-8D
+;C:\webapp\BiblioWeb\src\BiblioWebApplicationCore\Program.csutf-8D
+;C:\webapp\BiblioWeb\src\BiblioWebApplicationCore\Startup.csutf-8`
+WC:\webapp\BiblioWeb\src\BiblioWebApplicationCore\Views\Home\Components\InvokeAddItem.csutf-8c
+ZC:\webapp\BiblioWeb\src\BiblioWebApplicationCore\Views\Home\Components\InvokeDeleteItem.csutf-8c
+ZC:\webapp\BiblioWeb\src\BiblioWebApplicationCore\Views\Home\Components\InvokeImportItem.csutf-8c
+ZC:\webapp\BiblioWeb\src\BiblioWebApplicationCore\Views\Home\Components\InvokeIsReadItem.csutf-8a
+XC:\webapp\BiblioWeb\src\BiblioWebApplicationCore\Views\Home\Components\InvokeListItem.csutf-8a
+XC:\webapp\BiblioWeb\src\BiblioWebApplicationCore\Views\Home\Components\InvokeNoteItem.csutf-8a
+XC:\webapp\BiblioWeb\src\BiblioWebApplicationCore\Views\Home\Components\InvokeSaveItem.csutf-8c
+ZC:\webapp\BiblioWeb\src\BiblioWebApplicationCore\Views\Home\Components\InvokeSearchItem.csutf-8

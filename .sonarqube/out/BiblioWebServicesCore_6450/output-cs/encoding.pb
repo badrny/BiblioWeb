@@ -1,0 +1,12 @@
+U
+LC:\webapp\BiblioWeb\src\BiblioWebServicesCore\Controllers\BooksController.csutf-8L
+CC:\webapp\BiblioWeb\src\BiblioWebServicesCore\Data\DBInitializer.csutf-8`
+WC:\webapp\BiblioWeb\src\BiblioWebServicesCore\Migrations\20170828193510_InitDataBook.csutf-8]
+TC:\webapp\BiblioWeb\src\BiblioWebServicesCore\Migrations\BookContextModelSnapshot.csutf-8D
+;C:\webapp\BiblioWeb\src\BiblioWebServicesCore\Model\Book.csutf-8K
+BC:\webapp\BiblioWeb\src\BiblioWebServicesCore\Model\BookContext.csutf-8N
+EC:\webapp\BiblioWeb\src\BiblioWebServicesCore\Model\BookRepository.csutf-8F
+=C:\webapp\BiblioWeb\src\BiblioWebServicesCore\Model\IMedia.csutf-8K
+BC:\webapp\BiblioWeb\src\BiblioWebServicesCore\Model\IRepository.csutf-8A
+8C:\webapp\BiblioWeb\src\BiblioWebServicesCore\Program.csutf-8A
+8C:\webapp\BiblioWeb\src\BiblioWebServicesCore\Startup.csutf-8

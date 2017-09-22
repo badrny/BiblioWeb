@@ -46,10 +46,7 @@ namespace BiblioWebApplicationCore.Views.Home.Components
                     }
                 }
                 for (int i = 1; i < imgInfo.Count; i++)
-                {
-                    // add names of author
-                    book.Author = book.Author + imgInfo[i];
-                }
+                   book.Author = book.Author + imgInfo[i];
                 book.Date = DateTime.Parse(imgInfo[0]).ToUniversalTime();
                 return View("InvokeImportItem",book);
             }

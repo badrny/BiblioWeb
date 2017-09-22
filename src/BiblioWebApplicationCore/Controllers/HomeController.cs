@@ -36,8 +36,6 @@ namespace BiblioWebApplicationCore.Controllers
             return View();
         }
 
-        public IActionResult Create(string title, string autor, string type) => View();
-
         public IActionResult Contact()
         {
             ViewData["Message"] = "Me contacter";
@@ -52,19 +50,14 @@ namespace BiblioWebApplicationCore.Controllers
 
         public IActionResult Error() => View();
 
-        public IActionResult CallInvokeImportItem(string nameofbook)
-        {
-            return ViewComponent("InvokeImportItem", nameofbook.Replace(" ", "+"));
-        }
+        public IActionResult CallInvokeImportItem(string nameofbook) => ViewComponent("InvokeImportItem", nameofbook.Replace(" ", "+"));
 
-        public IActionResult CallInvokeSaveItem(List<int> _booktypes, int _format, string _title, string _author, DateTime _date, string _src)
+        public IActionResult CallInvokeSaveItem(List<int> booktypes, int format, string title, string author, DateTime date, string src)
         {
             var tt = new List<BookType>();
-            foreach (var item in _booktypes)
-            {
-                tt.Add(new BookType { TypeID = item });
-            }
-            var book = new Book { Title = _title, Author = _author, CoverSrc = _src, Date = _date, Format = (Book.BookFormat)_format, Types = tt };
+            foreach (var item in booktypes)
+                tt.Add(new BookType {TypeID = item});
+            var book = new Book { Title = title, Author = author, CoverSrc = src, Date = date, Format = (Book.BookFormat)format, Types = tt };
             return ViewComponent("InvokeSaveItem", JsonConvert.SerializeObject(book));
         }
 
