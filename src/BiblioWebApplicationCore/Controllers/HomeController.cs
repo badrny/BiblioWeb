@@ -4,11 +4,18 @@ using Microsoft.AspNetCore.Mvc;
 using BiblioWebApplicationCore.Models;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 
 namespace BiblioWebApplicationCore.Controllers
 {
     public class HomeController : Controller
     {
+        public IConfiguration Configuration { get; }
+
+        public HomeController(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
         public IActionResult Authentication() => View();
 
         public IActionResult Index(string name, string email, string password, string cpassword)

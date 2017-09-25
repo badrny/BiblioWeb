@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using BiblioWebApplicationCore.Models;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 
 namespace BiblioWebApplicationCore.Views.Home.Components
 {
     public class InvokeListItem : ViewComponent
-
     {
+        private readonly IConfiguration _configuration;
+        public InvokeListItem(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
         public IViewComponentResult InvokeNormal()
         {
             return View();
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
+            string urlApi = _configuration.GetSection("UrlHostApi").GetSection("UrlApi").Value;
             using (HttpClient client = new HttpClient())
-            using (HttpResponseMessage response = await client.GetAsync("http://localhost:5000/api/Books"))
+            using (HttpResponseMessage response = await client.GetAsync(urlApi))
             using (HttpContent content = response.Content)
             {
                 // ... Read the string.
